@@ -1,0 +1,1 @@
+This repository will contain all of the Javascript oriented files, for course work through the Tech Academy.
