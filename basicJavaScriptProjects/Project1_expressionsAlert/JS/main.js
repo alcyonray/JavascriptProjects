@@ -15,3 +15,8 @@ var myExpression = 2 + 3 + 1995; //making an expression
 var Sent1 = "This is the beginning of the string", Sent2 = " and this is the end of the string." //creating the Sent1 and Sent2 variables
 
 var secondExpression = Sent1 + Sent2; //concatenating them together in an expression
+
+//creating a simple function to trigger with the onkeypress html event
+function keyWasPressed() {
+    window.alert("Are you trying to push my buttons?");
+}
