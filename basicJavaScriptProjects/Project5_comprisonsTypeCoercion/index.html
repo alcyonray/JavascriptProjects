@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparisons and Type Coercion</title>
+    <script src="./JS/main.js"></script>
+    <style>
+        .hidden {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- a coercive function button -->
+    <button onclick="theFunction()">Push to coerce</button>
+    <p id="targetOne"></p>
+
+
+    <!-- not a number -->
+    <button onclick="notANumber()">Not a Button</button>
+    <p id="not" class="hidden">The isNaN() function, evaluates whether or no a variable is not a number.  
+        If you pass a non-number variable, such as a string into it, it will return true.
+    </p>
+    <p id="a"></p>
+    <p id="number"></p>
+
+
+    <!-- demonstration of infinity -->
+    <button onclick="infinityAndBeyond()">Infinity and Beyond...</button>
+    <p id="infinity"></p>
+    <p id="and"></p>
+    <p id="beyond"></p>
+
+
+    <!-- Boolean logic section -->
+    <button onclick="truthOrDare()">True or Dare?</button>
+    <p id="truth" class="hidden">Boolean logic is facilitated in programming, through the passage of true false instructions through logical gates.  Some examples below...</p>
+    <p id="or"></p>
+    <p id="dare"></p>
+
+
+    <!-- See console for results -->
+    <button onclick="consoleLogger()">Check console for results</button>
+    <p id="equation" class="hidden">(7 + 12) * 14 - 1243 = *see console for answer*</p>
+
+
+    <!-- utilizing the == comparison operator -->
+    <button onclick="equalizer()">Are they equivalent?</button>
+    <p id="equalizerIntro" class="hidden">JavaScript gives us the == operator, to allow us to compare variables, and return a boolean of whether or not they are equivalent.</p>
+    <p id="equalizerTrue"></p>
+    <p id="equalizerFalse"></p>
+
+
+    <!-- utilizing the === operator -->
+    <button onclick="tripleCheck()">Are they really equal?</button>
+    <p id="tripleCheckIntro" class="hidden">Additionally, JavaScript gives us the === operator, which returns a boolean value, relative to whether or not the variables are equal in both type and value.</p>
+    <p id="caseA"></p>
+    <p id="caseB"></p>
+    <p id="caseC"></p>
+    <p id="caseD"></p>
+
+
+    <!-- AND/OR operators, for boolean values -->
+    <button onclick="andOr()">AND or OR?</button>
+    <p id="andOrIntro" class="hidden">Some other common logic operators are AND (&&) and OR (||)</p>
+    <p id="andTrue"></p>
+    <p id="andFalse"></p>
+    <p id="orTrue"></p>
+    <p id="orFalse"></p>
+
+
+    <!-- the NOT operator -->
+    <button onclick="notAgain()">NOT this...</button>
+    <p id="notAgainIntro" class="hidden">The next operator is NOT, symbolized by '!'.  NOT can be used to make any boolean value, have its opposite value.</p>
+    <p id="NOTtrue"></p>
+    <p id="NOTfalse"></p>
+</body>
+</html>
