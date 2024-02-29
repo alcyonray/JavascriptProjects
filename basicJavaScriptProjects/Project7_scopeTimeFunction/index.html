@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope, Time function</title>
+    <script src="./JS/main.js"></script>
+    <style>
+        .hidden {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Start here... -->
+    <button onclick="localityExperiment()">Click to begin.</button>
+    <p id="global"></p>
+    <p id="local"></p>
+    <p id="error"></p>
+
+
+    <!-- date hours, and conditional practice -->
+    <button onclick="dateNight()">Date night</button>
+    <p id="relevantQuestion"></p>
+
+
+    <!-- my very own if -->
+    <button onclick="inputReveal()">Click to view next section</button> <br>
+    <input id="someValue" value="Hint: the best kind of berry" class="hidden"/>
+    <button onclick="eValueator()" class="hidden" id="dontHideMe">Submit</button>
+    <p id="isPsychic"></p>
+
+
+    <!-- else assignment -->
+    <button onclick="revealElse()">Else assignment section</button> <br>
+    <p class="hidden revealElse">Please enter your name:</p>
+    <input class="hidden revealElse" value="Enter name here" id="elseInput">
+    <button class="hidden revealElse" onclick="everythingElse()">Submit</button>
+    <p id="everythingElse"></p>
+
+
+    <!-- else if time gates -->
+    <button onclick="revealTime()">Else-if assignment</button>
+    <p id="timeGreeting"></p>
+</body>
+</html>
