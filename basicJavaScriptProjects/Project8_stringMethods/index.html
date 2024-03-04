@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods</title>
+    <style>
+        .hidden {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- target for the output of concat method -->
+    <p id="target">Test</p>
+
+
+    <!-- target for the output of slice method -->
+    <button onclick="sliceMe()">Click to Slice</button>
+    <p id="loafPan"></p>
+    <p id="sliceOne"></p>
+    <p id="sliceTwo"></p>
+    <p id="sliceThree"></p>
+
+
+    <!-- toUpperCase() demonstration -->
+    <button onclick="capitalize()">toUpperCase()</button>
+    <div id="capitalizeSection" class="hidden">
+        <p>Enter something in the text-box</p>
+        <input id="capitalizeInput" type="text">
+        <button onclick="displayUpper()">Submit</button>
+        <p id="capitalizeOutput"></p>
+    </div>
+    
+
+    <!-- search() method demonstration -->
+    <button onclick="comenceSearch()">Search Party</button>
+    <div id="searchSection" class="hidden">
+        <p id="searchPhrase">type a word from somewhere within this sentence and the next button will search for it</p>
+        <input type="text" id="searchInput">
+        <button onclick="searching()">Submit</button>
+        <p id="searchWord"></p>
+        <p id="location"></p>
+    </div>
+
+
+    <!-- utilizing the toString method -->
+    <button onclick="revealStringer()">Let's do some type conversion</button>
+    <div id="numbString" class="hidden">
+        <p>Please enter your favorite number below</p>
+        <input type="text" id="numbInput">
+        <button onclick="numberStringer()">Submit</button>
+        <p id="theNumberString"></p>
+    </div>
+
+
+    <!-- utilizing toPreciison() -->
+    <button onclick="revealPrecision()">Let's get precise</button>
+    <div id="precise" class="hidden">
+        <p>Some decimel numbers, can be overwhelming, and nearly unuseable if written out to all their digits.  Take Pi for example:</p>
+        <p>3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679</p>
+        <p>This is Pi, with its first 100 digits.  We can use the toPreciison() method to shorten to fewer significant figures.  Enter a number less than 100 below:</p>
+        <input type="text" id="piDigits">
+        <button onclick="slicer()">Submit</button>
+        <p id="sliceOfPi"></p>
+    </div>
+
+
+    <!-- toFixed() demonstration -->
+    <button onclick="revealFixer()">Click to fix</button>
+    <div id="fixed" class="hidden">
+        <p>The toFixed() method converts a number to a string, rounded to a specified number of decimels.</p>
+        <p>Let's say we have var n = 3.14159</p>
+        <p id="fixerOutput"></p>
+    </div>
+
+
+    <!-- valueOf() demonstration -->
+    <button onclick="revealValue()">Reveal Value</button>
+    <div id="valued" class="hidden">
+        <p>The valueOf() method, is able to return the pirimitive value of a string object, without affecting the object itself.</p>
+        <p>Say var sentence = "This is a sentence"</p>
+        <p id="valueRevealed"></p>
+    </div>
+
+
+    <script src="./JS/main.js"></script>
+</body>
+</html>
