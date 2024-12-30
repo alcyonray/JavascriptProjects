@@ -21,6 +21,6 @@ function howCloseAmI() {
 /* removing the displacement key from the dictionary */
 function displacement() {
     document.getElementById("displacement").innerHTML = currentFavoriteMotorcycle.Displacement;
-    delete currentFavoriteMotorcycle.Displacement;
+    delete currentFavoriteMotorcycle.displacement;
     document.getElementById("displaced").innerHTML = currentFavoriteMotorcycle.Displacement;
 }
