@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running Javascript in the Console</title>
+</head>
+<body>
+    <p id="globalVariables" onclick="global()">Global - click here</p>
+    <p id="localVariables" onclick="local()">Local - click here</p>
+    <hr>
+
+    <p id="concat" onclick="concatenate()">Click here for a concatenated sentence</p>
+    <hr>
+
+    <button onclick="newCourse()">Click here for new course</button>
+    <p id="displayCourse"></p>
+    <hr>
+
+    <p id="displayAge"></p>
+    <hr>
+
+    <canvas id="firstCanvas" width="300" height="150" style="border: 1px solid black;"></canvas>
+    <br>
+
+    <canvas id="secondCanvas" width="300" height="150" style="border: 2px dotted blue;"></canvas>
+    <script>
+        //global variables that can be edited in the console
+        let a = 3;
+        let b = 4;
+
+        function global(){
+            result = a + b;
+            document.getElementById("globalVariables").innerHTML = "Global variable a (" + a + ") plus global variable b (" + b + ") equals " + result;
+        }
+
+        function local() {
+            let c = 4;
+            let d = 3;
+            result = c + d;
+            document.getElementById("localVariables").innerHTML = "Local variable c (" + c + ") plus local variable d (" + d + ") equals " + result;
+        }
+
+        let sentence1;
+        let sentence2;
+
+        function concatenate() {
+            //Concatenates sentence 1 and 2
+            let concatSent = sentence1.concat(sentence2);
+
+            //displays result on webpage
+            document.getElementById("concat").innerHTML = concatSent;
+
+            //Display result in the console
+            console.log(concatSent);
+        }
+
+        //creates a course object constructor
+        function Course(Name, Type, Duration) {
+            this.courseName = "Today's new course is: " + Name + "<br>";
+            this.courseType = "Type: " + Type + "<br>";
+            this.courseDur = "Course Length: " + Duration + " hours";
+        }
+
+        let js = new Course("JavaScript", "Code", 55);
+        let py = new Course("Python", "Code", 90);
+
+        //age calculator
+        let year = prompt("Type in the year you were born");
+        let yearNow = new Date().getFullYear();
+        let age = Math.floor(yearNow - year);
+        let displayAge = document.getElementById("displayAge");
+        let ageComment = "";
+        if (age > 25) {
+            ageComment = "You are " + age + " years old, and can rent a car!";
+        } else {
+            ageComment = "You are " + age + " years old, and are too young to rent a car...";
+        }
+        displayAge.innerHTML = ageComment;
+    </script>
+    <script src="./JS/javascript1.js"></script>
+</body>
+</html>
