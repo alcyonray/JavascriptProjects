@@ -33,11 +33,11 @@ function placeXOrO(squareNumber) {
         }
 
         //This function plays placement sound
-        //Audio('./media/place.mp3');
+        audio('./media/place.mp3');
         //This condition checks to see if it is the computers turn
         if (activePlayer === 'O') {
             //this function disables clicking for computers turn
-            //disableClick();
+            disableClick();
             //This function waits 1 second before the computer places an image and enables click
             setTimeout(function () { computersTurn(); }, 1000);
         }
@@ -102,7 +102,7 @@ function checkWinConditions() {
         drawWinLine(100, 100, 520, 520)
     } else if (selectedSquares.length >= 9) { //checks for a tie
         //this function plays the tie game sound
-        //Audio('./media/tie.mp3');
+        audio('./media/tie.mp3');
         //this function sets a .3 second timer before the resetGame is called
         setTimeout(function () { resetGame(); }, 500);
     }
@@ -155,4 +155,69 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
         x = x1,
         //temporary y axis data
         y = y1;
+    //This function interacts with the canvas
+    function animateLineDrawing() {
+        //creates a loop
+        const animationLoop = requestAnimationFrame(animateLineDrawing);
+        //this method clears content from the last loop
+        c.clearRect( 0, 0, 608, 608);
+        //starts a new path
+        c.beginPath();
+        //moves to a starting point in line
+        c.moveTo(x1, y1);
+        //indicates teh end point in line
+        c.lineTo(x, y);
+        //sets teh width of line
+        c.lineWidth = 10;
+        //sets color of line
+        c.strokeStyle = 'rgba(70, 255, 33, .8)';
+        //draws everything from above
+        c.stroke();
+        //checks if endpoints have been reached
+        if (x1 <= x2 && y1 <= y2) {
+            //adds 10 to previous x endpoint
+            if (x < x2) { x += 10; }
+            //add 10 to prebious y endpoint
+            if (y < y2) { y += 10; }
+            //neccessary for 6, 4, 2 win conditions
+            if (x >= x2 && y >= y2) { cancelAnimationFrame(animationLoop); }
+        }
+        //also neccessary for 6, 4, 2 win condition
+        if (x1 <= x2 && y1 >= y2) {
+            if (x < x2) { x += 10; }
+            if (y> y2) { y -= 10; }
+            if (x >= x2 && y<= y2) { cancelAnimationFrame(animationLoop); }
+        }
+    }
+
+    //clears canvas after win line is drawn
+    function clear() {
+        //starts animation loop
+        const animationLoop = requestAnimationFrame(clear);
+        //clears canvas
+        c.clearRect(0, 0, 608, 608);
+        //stops animation loop
+        cancelAnimationFrame(animationLoop);
+    }
+    //disallows clicking while the win sound is playing
+    disableClick();
+    //plays win sound
+    audio('./media/winGame.mp3');
+    //calls main animation loop
+    animateLineDrawing();
+    //waits 1 second; then clears canvas, resets game, and allows clicking again
+    setTimeout(function () { clear(); resetGame(); }, 1000);
+}
+
+//resets the game in the event of a tie or a win
+function resetGame() {
+    //interates through each HTML square element
+    for (let i = 0; i < 9; i++) {
+        //gets the HTML element i
+        let square = document.getElementById(String(i));
+        //removes elements backgroundImage
+        square.style.backgroundImage = "";
+    }
+    //resets the array 
+    selectedSquares = [];
 }
