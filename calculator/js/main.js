@@ -108,3 +108,10 @@ keys.addEventListener('click', (event) => {
     inputDigit(target.value);
     updateDisplay();
 })
+
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}

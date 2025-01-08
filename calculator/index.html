@@ -43,5 +43,26 @@
 
         </div>
     </div>
+
+    <div class="contactForm">
+        
+        <button class="open-button" onclick="openForm()">Open Form</button>
+
+        <div class="form-popup" id="myForm">
+            <form class="form-container">
+                <h1>Contact</h1>
+
+                <label for="name">Full Name</label>
+                <input type="text" name="name" placeholder="Full Name" required>
+
+                <label for="email">Email</label>
+                <input type="text" name="email" placeholder="Enter Email" required>
+
+                <button type="submit" class="btn">Submit</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+
+            </form>
+        </div>
+    </div>
 </body>
 </html>
