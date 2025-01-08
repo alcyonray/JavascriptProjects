@@ -153,3 +153,22 @@ body {
 .form-container .btn:hover, .open-button:hover {
     opacity: 1;
 }
+
+#movingSquare {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: relative;
+    animation: myMove 5s infinite;
+}
+
+@keyframes myMove {
+    from {
+        top: 0px;
+        left: 0px;
+    }
+    to {
+        top: 180px;
+        left: 180px;
+    }
+}
