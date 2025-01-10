@@ -101,3 +101,21 @@ img {
     display: none;
     padding: 40px 20px;
 }
+
+
+/*photo zoom animation*/
+@keyframes zoominout {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+img {
+    animation: zoominout 15s forwards;
+}

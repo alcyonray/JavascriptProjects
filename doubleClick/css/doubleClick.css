@@ -1,0 +1,22 @@
+body {
+    background-color: rgba(165, 165, 255, 0.8);
+}
+
+.trouble {
+    color: rgba(240, 190, 108, 0.8);
+}
+
+.teaser {
+    color: rgba(240, 191, 108, 0.8);
+}
+
+.hidden {
+    display: none;
+}
+
+.afterDouble {
+    color: white;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+}
